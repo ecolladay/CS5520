@@ -14,4 +14,15 @@
         android:layout_centerHorizontal="true"
         />
 
+    <ImageView
+        android:id="@+id/zorraImage"
+        android:layout_width="206dp"
+        android:layout_height="219dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="442dp"
+
+        android:contentDescription="Zorra"
+        android:src="@drawable/zorraImage"
+        android:visibility="visible" />
 </RelativeLayout>
