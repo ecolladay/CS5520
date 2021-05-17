@@ -12,7 +12,7 @@ public class ButtonClick extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button_click);
 
-        ImageView zorraImage = findViewById(R.id.zorraImage);
-        //zorra.setImageResource(R.drawable.zorra);
+        //ImageView dogImage = findViewById(R.id.dog);
+        //dogImage.setImageResource(R.drawable.dog);
     }
 }
