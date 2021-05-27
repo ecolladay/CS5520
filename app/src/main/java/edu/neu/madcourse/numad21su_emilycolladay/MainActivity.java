@@ -7,37 +7,43 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
 public class MainActivity extends AppCompatActivity {
-    private Button button;
-    private Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.button_about);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openContact();
-            }
-        });
+        //Button button_about = findViewById(R.id.button_about);
+        //button_about.setOnClickListener(v -> openContact());
 
-        button2 = (Button) findViewById(R.id.button_letters);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { openContact2();}
-        });
+        //Button button_letters = findViewById(R.id.button_letters);
+        //button_letters.setOnClickListener(v -> openContact2());
     }
 
-    private void openContact2() {
-        Intent intent = new Intent(this, LettersClick.class);
-        startActivity(intent);
+    public void onClick(View v){
+
+        if(v.getId() == R.id.button_about){
+            Intent intent = new Intent(this, ButtonClick.class);
+            startActivity(intent);
+
+        }else if(v.getId() == R.id.button_letters){
+            Intent intent = new Intent(this, LettersClick.class);
+            startActivity(intent);
+        }
+
     }
 
+    /**
     public void openContact() {
         Intent intent = new Intent(this, ButtonClick.class);
         startActivity(intent);
     }
+
+    public void openContact2() {
+        Intent intent = new Intent(this, LettersClick.class);
+        startActivity(intent);
+    }
+     */
 }

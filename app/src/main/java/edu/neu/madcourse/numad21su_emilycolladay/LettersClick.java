@@ -6,39 +6,67 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 
 public class LettersClick extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // set the content to the XML file
+        setContentView(R.layout.activity_button_letters);
 
-        Button buttonA = new Button(this);
-        buttonA.setText(R.string.A);
-        buttonA.setId(R.id.button_A);
 
-        Button buttonB = new Button(this);
-        buttonB.setText(R.string.B);
-        buttonB.setId(R.id.button_B);
+        Button buttonA = findViewById(R.id.button_A);
+        Button buttonB = findViewById(R.id.button_B);
+        Button buttonC = findViewById(R.id.button_C);
+        Button buttonD = findViewById(R.id.button_D);
+        Button buttonE = findViewById(R.id.button_E);
+        Button buttonF = findViewById(R.id.button_F);
 
-        Button buttonC = new Button(this);
-        buttonC.setText(R.string.C);
-        buttonC.setId(R.id.button_C);
+        // Add action listeners
 
-        Button buttonD = new Button(this);
-        buttonD.setText(R.string.D);
-        buttonD.setId(R.id.button_D);
+        buttonA.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: A", Toast.LENGTH_SHORT).show());
 
-        Button buttonE = new Button(this);
-        buttonE.setText(R.string.E);
-        buttonE.setId(R.id.button_E);
+        buttonB.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: B", Toast.LENGTH_SHORT).show());
 
-        Button buttonF = new Button(this);
-        buttonF.setText(R.string.F);
-        buttonF.setId(R.id.button_F);
+        buttonC.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: C", Toast.LENGTH_SHORT).show());
 
+        buttonD.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: D", Toast.LENGTH_SHORT).show());
+
+        buttonE.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: E", Toast.LENGTH_SHORT).show());
+
+        buttonF.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: F", Toast.LENGTH_SHORT).show());
+
+
+
+        /**
+         Button buttonA = new Button(this);
+         buttonA.setText(R.string.A);
+         buttonA.setId(R.id.button_A);
+
+         Button buttonB = new Button(this);
+         buttonB.setText(R.string.B);
+         buttonB.setId(R.id.button_B);
+
+         Button buttonC = new Button(this);
+         buttonC.setText(R.string.C);
+         buttonC.setId(R.id.button_C);
+
+         Button buttonD = new Button(this);
+         buttonD.setText(R.string.D);
+         buttonD.setId(R.id.button_D);
+
+         Button buttonE = new Button(this);
+         buttonE.setText(R.string.E);
+         buttonE.setId(R.id.button_E);
+
+         Button buttonF = new Button(this);
+         buttonF.setText(R.string.F);
+         buttonF.setId(R.id.button_F);
+         */
+
+
+        /**
         ConstraintLayout myCl = new ConstraintLayout(this);
 
         myCl.addView(buttonA);
@@ -48,7 +76,8 @@ public class LettersClick extends AppCompatActivity {
         myCl.addView(buttonE);
         myCl.addView(buttonF);
 
-        setContentView(myCl);
+        //setContentView(myCl);
+        setContentView(R.layout.activity_button_letters); // confused here
 
         ConstraintSet csButtonA = new ConstraintSet();
 
@@ -116,51 +145,7 @@ public class LettersClick extends AppCompatActivity {
 
         csButtonF.applyTo(myCl);
 
+        */
 
-        buttonA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Pressed: A", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        buttonB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Pressed: B", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        buttonC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Pressed: C", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        buttonD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Pressed: D", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        buttonE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Pressed: E", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        buttonF.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Pressed: F", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-        //setContentView(R.layout.activity_button_letters);
     }
 }

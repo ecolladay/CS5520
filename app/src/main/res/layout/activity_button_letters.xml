@@ -9,43 +9,34 @@
         android:id="@+id/button_B"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="243dp"
+        android:gravity="center"
+        android:onClick="onClick"
         android:text="@string/B"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_E"
-        app:layout_constraintEnd_toStartOf="@+id/button_C"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_A"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="250dp" />
 
     <Button
         android:id="@+id/button_A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="243dp"
+        android:gravity="center"
+        android:onClick="onClick"
         android:text="@string/A"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_D"
-        app:layout_constraintEnd_toStartOf="@+id/button_B"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="252dp" />
 
     <Button
         android:id="@+id/button_C"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="243dp"
+        android:gravity="center"
+        android:onClick="onClick"
         android:text="@string/C"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_B"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="286dp"
+        tools:layout_editor_absoluteY="249dp" />
 
     <Button
         android:id="@+id/button_D"
@@ -53,40 +44,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:gravity="center"
+        android:onClick="onClick"
         android:text="@string/D"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_E"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="356dp" />
 
     <Button
         android:id="@+id/button_E"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="onClick"
         android:text="@string/E"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_F"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_D"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="356dp" />
 
     <Button
         android:id="@+id/button_F"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="onClick"
         android:text="@string/F"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_E"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        tools:layout_editor_absoluteX="286dp"
+        tools:layout_editor_absoluteY="356dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

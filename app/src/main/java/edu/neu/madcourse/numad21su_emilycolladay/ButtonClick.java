@@ -11,7 +11,5 @@ public class ButtonClick extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button_about);
 
-        //ImageView dogImage = findViewById(R.id.dog);
-        //dogImage.setImageResource(R.drawable.dog);
     }
 }
