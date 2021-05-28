@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_ec_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD21SuEmilyColladay">
-        <activity android:name=".ButtonClick"
-            android:configChanges="orientation|screenSize|keyboardHidden"></activity>
+        <activity
+            android:name=".ButtonClick"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -19,8 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LettersClick"
-            android:configChanges="orientation|screenSize|keyboardHidden"></activity>
+        <activity
+            android:name=".LettersClick"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
     </application>
 
 </manifest>

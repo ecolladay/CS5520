@@ -10,4 +10,5 @@
     <string name="D">D</string>
     <string name="E">E</string>
     <string name="F">F</string>
+    <string name="ButtonPressed">Button pressed: none</string>
 </resources>
