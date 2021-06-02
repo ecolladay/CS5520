@@ -23,21 +23,6 @@ public class LettersClick extends AppCompatActivity implements View.OnClickListe
         Button buttonD = findViewById(R.id.button_D);
         Button buttonE = findViewById(R.id.button_E);
         Button buttonF = findViewById(R.id.button_F);
-
-        /** Add action listeners
-
-        buttonA.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: A", Toast.LENGTH_SHORT).show());
-
-        buttonB.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: B", Toast.LENGTH_SHORT).show());
-
-        buttonC.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: C", Toast.LENGTH_SHORT).show());
-
-        buttonD.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: D", Toast.LENGTH_SHORT).show());
-
-        buttonE.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: E", Toast.LENGTH_SHORT).show());
-
-        buttonF.setOnClickListener(v -> Toast.makeText(getApplicationContext(), "Pressed: F", Toast.LENGTH_SHORT).show());
-        */
     }
 
     @Override
