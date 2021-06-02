@@ -53,6 +53,8 @@
         android:id="@+id/button_links"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:onClick="onClick"
         android:text="@string/Links"
         app:layout_constraintBottom_toBottomOf="@+id/button_letters"
         app:layout_constraintEnd_toStartOf="@+id/guideline17"

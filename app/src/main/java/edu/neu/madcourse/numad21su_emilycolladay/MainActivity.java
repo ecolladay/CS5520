@@ -20,12 +20,11 @@ public class MainActivity extends AppCompatActivity {
         if(v.getId() == R.id.button_about){
             Intent intent = new Intent(this, ButtonClick.class);
             startActivity(intent);
-
         }else if(v.getId() == R.id.button_letters){
             Intent intent = new Intent(this, LettersClick.class);
             startActivity(intent);
         }else if(v.getId() == R.id.button_links){
-            Intent intent = new Intent(this, com.example.recyclerviewsample.LinksClick.class);
+            Intent intent = new Intent(this, LinksClick.class);
             startActivity(intent);
         }
 

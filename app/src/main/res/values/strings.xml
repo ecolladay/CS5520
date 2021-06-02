@@ -12,4 +12,7 @@
     <string name="F">F</string>
     <string name="ButtonPressed">Button pressed: none</string>
     <string name="Links">Links</string>
+    <string name="linkName">linkName</string>
+    <string name="hyperLink">hyperLink</string>
+    <string name="LinkAdded">Link was successfully added!</string>
 </resources>
