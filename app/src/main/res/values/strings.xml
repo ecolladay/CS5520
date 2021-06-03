@@ -15,4 +15,8 @@
     <string name="linkName">linkName</string>
     <string name="hyperLink">hyperLink</string>
     <string name="LinkAdded">Link was successfully added!</string>
+    <string name="name_of_link">Name of link:</string>
+    <string name="link">Link:</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_link">Add link</string>
 </resources>
