@@ -5,27 +5,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+import android.app.Dialog;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
+
+import android.widget.Button;
+import android.widget.EditText;
+
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-
 import java.util.ArrayList;
 
 
 
 public class LinksClick extends AppCompatActivity {
-    //Creating the essential parts needed for a Recycler view to work: RecyclerView, Adapter, LayoutManager
     private ArrayList<ItemCard> linkList = new ArrayList<>();
     private RecyclerView rView;
     private LinksAdapter adapter;
     private RecyclerView.LayoutManager rLayoutManager;
     private FloatingActionButton addButton;
-
-    private static final String KEY_OF_INSTANCE = "KEY_OF_INSTANCE";
-    private static final String NUMBER_OF_LINKS = "NUMBER_OF_LINKS";
 
 
     @Override
@@ -35,13 +34,12 @@ public class LinksClick extends AppCompatActivity {
 
         createRecyclerView();
 
+
         addButton = findViewById(R.id.addButton);
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int pos = 0;
-                addLink(pos);
-            }
+
+        addButton.setOnClickListener(v -> {
+            int pos = 0;
+            callDialog(pos);
         });
     }
 
@@ -62,9 +60,36 @@ public class LinksClick extends AppCompatActivity {
 
     }
 
+    // creates the popup to populate the list with inputted links
+    private void callDialog(int pos){
+        Dialog popup = new Dialog(this);
+        popup.setContentView(R.layout.link_popup);
+
+        Button add = popup.findViewById(R.id.buttonAddLink);
+        Button cancel = popup.findViewById(R.id.buttonCancel);
+        popup.show();
+
+        add.setOnClickListener(v -> {
+            EditText ed1 = popup.findViewById(R.id.LinkInputName);
+            String n = ed1.getText().toString();
+
+            EditText ed2 = popup.findViewById(R.id.linkEdit);
+            String www = ed2.getText().toString();
+
+            popup.cancel();
+            addLink(pos, n, www);
+
+        });
+        cancel.setOnClickListener(v -> popup.cancel());
+
+    }
+
     // Adds another link to the list
-    private void addLink(int position) {
-        linkList.add(position, new ItemCard("No Logo item", "Item id: "));
+    private void addLink(int position, String name, String link) {
+        ItemCard n = new ItemCard(name, link);
+
+
+        linkList.add(position, n);
         //Toast.makeText(getApplicationContext(), "Add an item", Toast.LENGTH_SHORT).show();
 
         adapter.notifyItemInserted(position);

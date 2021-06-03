@@ -1,5 +1,7 @@
 package edu.neu.madcourse.numad21su_emilycolladay;
 
+import android.widget.TextView;
+
 public class ItemCard {
 
     private final String linkName;
@@ -8,6 +10,7 @@ public class ItemCard {
     public ItemCard(String linkName, String linkHyper){
         this.linkName = linkName;
         this.linkHyper = linkHyper;
+
     }
 
     public String getLinkName() {
