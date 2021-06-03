@@ -7,10 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -52,6 +56,26 @@ public class LinksClick extends AppCompatActivity {
         rView.setHasFixedSize(true);
 
         adapter = new LinksAdapter(linkList);
+        LinkClickListener itemClickListener = new LinkClickListener(){
+            @Override
+            public void onItemClick(int position) {
+                //attributions bond to the item has been changed
+                String link = linkList.get(position).getLinkHyper();
+                try {
+                    if (!link.startsWith("https://") && !link.startsWith("http://")) {
+                        link = "http://" + link;
+                    }
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link)));
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(getApplicationContext(), "Please try with valid link",
+                            Toast.LENGTH_SHORT).show();
+
+
+                }
+                adapter.notifyItemChanged(position);
+            }
+        };
+        adapter.setOnItemClickListener(itemClickListener);
 
 
         rView.setAdapter(adapter);

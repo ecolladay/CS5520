@@ -1,11 +1,14 @@
 package edu.neu.madcourse.numad21su_emilycolladay;
 
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,6 +21,7 @@ public class LinksAdapter extends RecyclerView.Adapter<LinksAdapter.linksViewHol
     public LinksAdapter(ArrayList<ItemCard> itemList) {
         this.itemList = itemList;
     }
+
     public void setOnItemClickListener(LinkClickListener listener) {
         this.listener = listener;
     }
@@ -37,12 +41,13 @@ public class LinksAdapter extends RecyclerView.Adapter<LinksAdapter.linksViewHol
                     if (listener != null) {
                         int position = getLayoutPosition();
                         if (position != RecyclerView.NO_POSITION) {
-
                             listener.onItemClick(position);
                         }
+
                     }
                 }
             });
+
         }
     }
 

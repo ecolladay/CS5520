@@ -1,8 +1,9 @@
 package edu.neu.madcourse.numad21su_emilycolladay;
 
-import android.widget.TextView;
+import android.content.Intent;
+import android.net.Uri;
 
-public class ItemCard {
+public class ItemCard implements LinkClickListener {
 
     private final String linkName;
     private final String linkHyper;
@@ -21,5 +22,9 @@ public class ItemCard {
         return linkHyper;
     }
 
+
+    @Override
+    public void onItemClick(int position) {
+    }
 
 }

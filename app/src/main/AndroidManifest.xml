@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="edu.neu.madcourse.numad21su_emilycolladay">
 
     <application
@@ -7,7 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_ec_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NUMAD21SuEmilyColladay">
+        android:theme="@style/Theme.NUMAD21SuEmilyColladay"
+        tools:ignore="ExtraText">
         <activity
             android:name=".ButtonClick"
             android:configChanges="orientation|screenSize|keyboardHidden"
@@ -15,7 +17,8 @@
         <activity
             android:name=".LinksClick"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            />
+
+        />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
