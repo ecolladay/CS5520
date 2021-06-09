@@ -27,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, LinksClick.class);
             startActivity(intent);
         }
+        else if(v.getId() == R.id.button_location){
+            Intent intent = new Intent(this, LocationClick.class);
+            intent.putExtra("Id", 7);
+            startActivity(intent);
+        }
 
     }
+
 }

@@ -23,11 +23,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
         android:inputType="text"
+        app:layout_constrainedWidth="true"
+        android:hint="@string/type_in_name_of_website_here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/inputLink"
@@ -36,6 +39,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="86dp"
         android:text="@string/link"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,11 +49,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="115dp"
         android:inputType="text"
+        app:layout_constrainedWidth="true"
+        android:hint="@string/type_in_link_here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/buttonCancel"

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="edu.neu.madcourse.numad21su_emilycolladay">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:icon="@mipmap/ic_launcher_ec"
@@ -28,6 +30,9 @@
         </activity>
         <activity
             android:name=".LettersClick"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".LocationClick"
             android:configChanges="orientation|screenSize|keyboardHidden" />
     </application>
 

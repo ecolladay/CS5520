@@ -43,7 +43,6 @@ public class LinksAdapter extends RecyclerView.Adapter<LinksAdapter.linksViewHol
                         if (position != RecyclerView.NO_POSITION) {
                             listener.onItemClick(position);
                         }
-
                     }
                 }
             });

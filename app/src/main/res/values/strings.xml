@@ -15,8 +15,14 @@
     <string name="linkName">linkName</string>
     <string name="hyperLink">hyperLink</string>
     <string name="LinkAdded">Link was successfully added!</string>
-    <string name="name_of_link">Name of link:</string>
+    <string name="name_of_link">Name of website:</string>
     <string name="link">Link:</string>
     <string name="cancel">Cancel</string>
     <string name="add_link">Add link</string>
+    <string name="type_in_link_here">Type in link here</string>
+    <string name="type_in_name_of_website_here">Type in name of website here</string>
+    <string name="location">Location</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="locator">Locator</string>
 </resources>
