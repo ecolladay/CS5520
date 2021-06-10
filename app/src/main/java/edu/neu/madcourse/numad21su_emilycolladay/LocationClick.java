@@ -1,16 +1,13 @@
 package edu.neu.madcourse.numad21su_emilycolladay;
 import android.Manifest;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.content.DialogInterface;
 import android.os.Handler;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -26,33 +23,17 @@ public class LocationClick extends AppCompatActivity implements LocationListener
     String locationLatitude = "";
     String locationLongitude = "";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // set the content to the XML file
         setContentView(R.layout.location_main);
-
-        AlertDialog.Builder popup = new AlertDialog.Builder(LocationClick.this);
-        popup.setTitle("Location");
-        popup.setMessage("Location will update every few seconds");
-
-        popup.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-
-        popup.show();
 
         handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                Handler mHandler = new Handler();
-                startRepeatingTask();
+                start();
             }
-        }, 5000); //5 seconds
+        }, 2000); //2 seconds
 
         if (ContextCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
@@ -67,35 +48,35 @@ public class LocationClick extends AppCompatActivity implements LocationListener
     }
 
     @Override public void onDestroy() {
-        super.onDestroy(); stopRepeatingTask(); }
+        super.onDestroy(); stop(); }
 
 
     Runnable mStatusChecker = new Runnable() {
         @Override public void run() {
-            final EditText yourlat = (EditText) findViewById(R.id.latitude);
-            final EditText yourlong = (EditText) findViewById(R.id.longitude);
+            final TextView yourlat = (TextView) findViewById(R.id.latitude);
+            final TextView yourlong = (TextView) findViewById(R.id.longitude);
 
-            try { getLocation(); //this function can change value of mInterval.
-                if (locationText.toString() == "") {
-                    Toast.makeText(getApplicationContext(), "Trying to retrieve coordinates.",
+            try { getLocation();
+                if (locationText.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Fetching coordinates...",
                             Toast.LENGTH_LONG).show();
                 } else {
-                    yourlat.setText(locationLatitude.toString());
-                    yourlong.setText(locationLongitude.toString());
+                    yourlat.setText("Latitude: " + locationLatitude.toString());
+                    yourlong.setText("Longitude: " + locationLongitude.toString());
                 }
             }
             finally {
-                handler.postDelayed(mStatusChecker, 3000);
+                handler.postDelayed(mStatusChecker, 2000);
             }
         }
     };
 
 
-    void startRepeatingTask() {
+    void start() {
         mStatusChecker.run();
     }
 
-    void stopRepeatingTask() {
+    void stop() {
         handler.removeCallbacks(mStatusChecker);
     }
 
@@ -104,7 +85,7 @@ public class LocationClick extends AppCompatActivity implements LocationListener
         try {
             locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-                    2000, 5, (LocationListener) this);
+                    1000, 5, (LocationListener) this);
         } catch(SecurityException e) {
             e.printStackTrace();
         }
