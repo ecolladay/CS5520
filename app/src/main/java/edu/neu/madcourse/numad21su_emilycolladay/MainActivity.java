@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("Id", 7);
             startActivity(intent);
         }
+        else if(v.getId() == R.id.button_web){
+            Intent intent = new Intent(this, WebService.class);
+            startActivity(intent);
+        }
 
     }
 
