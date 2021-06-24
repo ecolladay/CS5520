@@ -26,4 +26,8 @@
     <string name="no">No</string>
     <string name="locator">Locator</string>
     <string name="web">Web</string>
+    <string name="convertTitle">Amount to convert</string>
+    <string name="type_dollar_amount">Type dollar amount</string>
+    <string name="convert">Convert</string>
+    <string name="meaning">Meaning</string>
 </resources>

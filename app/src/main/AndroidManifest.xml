@@ -36,6 +36,10 @@
         <activity
             android:name=".LocationClick"
             android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".WebService"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            />
     </application>
 
 </manifest>
