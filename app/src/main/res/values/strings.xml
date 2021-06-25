@@ -30,4 +30,6 @@
     <string name="type_dollar_amount">Type dollar amount</string>
     <string name="convert">Convert</string>
     <string name="meaning">Meaning</string>
+    <string name="dictionary">Dictionary</string>
+    <string name="get_definition">Get Definition</string>
 </resources>

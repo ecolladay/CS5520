@@ -1,9 +1,12 @@
 package edu.neu.madcourse.numad21su_emilycolladay;
 
 
+import android.app.Dialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -74,13 +77,28 @@ public class DictionaryGame extends AsyncTask<String, Integer, String>  {
             JSONObject de = sensesArray.getJSONObject(0);
             JSONArray d = de.getJSONArray("definitions");
             def = d.getString(0);
-            showDef.setText(def);
+            //showDef.setText(def);
+            callDialog(def);
+
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         Log.v("Result of Dictionary", "onPostExecute" + result);
+    }
+
+    private void callDialog(String def){
+        Dialog popup = new Dialog(context);
+        popup.setContentView(R.layout.definition_popup);
+
+        Button cancel = popup.findViewById(R.id.buttonCancel);
+        TextView definition = popup.findViewById(R.id.definitionText);
+        definition.setText(def);
+        popup.show();
+        cancel.setOnClickListener(v -> popup.cancel());
+
+
     }
 
 }

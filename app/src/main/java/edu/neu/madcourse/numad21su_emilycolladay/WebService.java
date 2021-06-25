@@ -35,9 +35,11 @@ public class WebService extends AppCompatActivity {
     }
 
     public void sendRequestOnClick(View v){
+        findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
         DictionaryGame game = new DictionaryGame(this, showDef);
         url = dictionaryEntries();
         game.execute(url);
+        findViewById(R.id.loadingPanel).setVisibility(View.GONE);
 
 }
 
