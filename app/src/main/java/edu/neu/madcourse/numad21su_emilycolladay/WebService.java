@@ -1,16 +1,13 @@
 package edu.neu.madcourse.numad21su_emilycolladay;
-
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class WebService extends AppCompatActivity {
     String url;
-    private TextView showDef;
     private EditText enterWord;
 
 
@@ -20,7 +17,6 @@ public class WebService extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
 
-        showDef = findViewById(R.id.showDef);
         enterWord = findViewById(R.id.enterWord);
 
     }
@@ -34,12 +30,13 @@ public class WebService extends AppCompatActivity {
         return "https://od-api.oxforddictionaries.com:443/api/v2/entries/" + language + "/" + word_id + "?" + "fields=" + fields + "&strictMatch=" + strictMatch;
     }
 
-    public void sendRequestOnClick(View v){
-        findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
-        DictionaryGame game = new DictionaryGame(this, showDef);
+    public void sendInput(View v){
+        Dictionary request = new Dictionary(this);
         url = dictionaryEntries();
-        game.execute(url);
-        findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+
+        request.execute(url);
+        //enterWord.setText("");
+
 
 }
 

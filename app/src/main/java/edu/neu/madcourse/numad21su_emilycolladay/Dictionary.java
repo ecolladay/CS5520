@@ -4,9 +4,9 @@ package edu.neu.madcourse.numad21su_emilycolladay;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -19,14 +19,14 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class DictionaryGame extends AsyncTask<String, Integer, String>  {
+public class Dictionary extends AsyncTask<String, Integer, String>  {
 
     Context context;
-    TextView showDef;
 
-    DictionaryGame(Context context, TextView t){
+
+    Dictionary(Context context){
         this.context = context;
-        showDef = t;
+
     }
 
 
@@ -48,7 +48,7 @@ public class DictionaryGame extends AsyncTask<String, Integer, String>  {
 
             String line = null;
             while ((line = reader.readLine()) != null) {
-                stringBuilder.append(line + "\n");
+                stringBuilder.append(line).append("\n");
             }
 
             return stringBuilder.toString();
@@ -77,23 +77,46 @@ public class DictionaryGame extends AsyncTask<String, Integer, String>  {
             JSONObject de = sensesArray.getJSONObject(0);
             JSONArray d = de.getJSONArray("definitions");
             def = d.getString(0);
-            //showDef.setText(def);
-            callDialog(def);
+            callLoadingDialog(def);
 
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        Log.v("Result of Dictionary", "onPostExecute" + result);
+        //Log.v("Result of Dictionary", "onPostExecute" + result);
     }
 
-    private void callDialog(String def){
+    private void callLoadingDialog(String def) {
+        Dialog popup = new Dialog(context);
+        popup.setContentView(R.layout.loading_popup);
+
+        new CountDownTimer(5000, 1000) {
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                popup.show();
+            }
+
+            @Override
+            public void onFinish() {
+                popup.cancel();
+                callDefDialog(def);
+            }
+        }.start();
+
+
+    }
+
+    private void callDefDialog(String def){
         Dialog popup = new Dialog(context);
         popup.setContentView(R.layout.definition_popup);
 
+
         Button cancel = popup.findViewById(R.id.buttonCancel);
         TextView definition = popup.findViewById(R.id.definitionText);
+        TextView title = popup.findViewById(R.id.dictionaryHeader);
+
         definition.setText(def);
         popup.show();
         cancel.setOnClickListener(v -> popup.cancel());
