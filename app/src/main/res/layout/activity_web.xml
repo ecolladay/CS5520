@@ -12,12 +12,13 @@
         android:scaleType="fitXY"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:contentDescription="Open books" />
+        android:contentDescription="@string/open_books" />
 
     <EditText
         android:id="@+id/enterWord"
         android:layout_width="281dp"
         android:layout_height="54dp"
+        android:backgroundTint="@android:color/holo_purple"
         android:hint="@string/type_word_into_dictionary"
         android:importantForAutofill="no"
 
